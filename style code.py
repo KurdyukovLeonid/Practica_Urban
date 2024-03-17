@@ -2,15 +2,16 @@
 
 # блоки кода
 
-x, y = 10, 29
+number_1, number_2 = 10, 29
 
-if x < 0:
+if number_1 < 0:
     print('Х меньше нуля')
-    z = x**2 + y
+    result = (x ** 2) + number_2
 else:
     print('Х больше нуля')
-    z = x - y
-print('Результат', z)
+    result = number_1 - number_2
+
+print('Результат:', result)
 
 # ср. с С++
 
@@ -20,31 +21,25 @@ print('Результат', z)
 
 # вложенные блоки кода
 
-name = input('Enter your name >>>')
+name = input('Enter your name: ')
 if name == 'Ola':
-    opponent = 'Ola'
     print('Hi, Ola!')
+elif name == 'Sofi':
+    print('Hi, Sofi!')
+elif name == 'Katy':
+    print('Hi, Katy!')
 else:
-    if name == 'Sofi':
-        opponent = 'Sofi'
-        print('Hi, Sofi!')
-    else:
-        if name == 'Katy':
-            opponent = 'Katy'
-            print('Hi, Katy!')
-        else:
-            opponent = 'anonymous'
-            print('Hi, anonymous!')
+    print('Hi, anonymous!')
 
 # оператор pass
 
-if x < 0:
-    if y > 0:
-        z = -x + y
+if number_1 < 0:
+    if number_2 > 0:
+        result = -number_1 + number_2
     else:
-        z = -x - y
+        result = -number_1 - number_2
 else:
-    z = x + y
+    result = number_1 + number_2
 
 # соглашения о стиле кода
 # PEP8 (Python Enhancement Proposal 8) - описан "правильный" стиль программирования в пайтон
@@ -52,8 +47,8 @@ else:
 
 # 4 пробела на каждый уровень отступа
 
-if x < 0:
-    if y > 0:
+if number_1 < 0:
+    if number_2 > 0:
         pass
     else:
         print('направо!')
@@ -67,23 +62,22 @@ my_poem = ['Варкалось, хливкие шорьки пырялись п�
 
 # пробелы в операторах
 
-x = 2
-y = x * x + 1
-is_big = x >= 3000
+number_1 = 2
+number_2 = number_1 * (number_1 + 1)
 
-x = my_poem[-1]
-print(x)
 my_list = [2, 3, 4, 5, 6]
+number_1 = my_list[-1]
+print(number_1)
 
 # reformat кода
 
-x, y = 3, 8
+number_1, number_2 = 3, 8
 
-if x == 3:
+if number_1 == 3:
     print(42)
 
-if x < 0:
-    if y > 0:
+if number_1 < 0 and number_2 > 0:
+    if number_2 > 0:
         print('налево!')
     else:
         print('направо!')
@@ -93,15 +87,16 @@ else:
 
 # названия переменных
 
-count_of_my_pets = 34
-if count_of_my_pets > 10:
+count_pets = 34
+
+if count_pets > 10:
     print('I need more space for my pets!')
 
-my_favorite_pets_and_bird = ['cat', 'wolf', 'ostrich']
-if 'lion' in my_favorite_pets_and_bird:
+favorite_pets = ['cat', 'wolf', 'ostrich']
+if 'lion' in favorite_pets:
     print('Wow!')
 
-MyFavoritePetsAndBirds = ['cat', 'wolf', 'ostrich']
+favorite_pets = ['cat', 'wolf', 'ostrich']
 # но такой стиль используется для названий классов
 
 
@@ -114,12 +109,14 @@ MyFavoritePetsAndBirds = ['cat', 'wolf', 'ostrich']
 #   x y z - для координат
 
 # никогда не используйте в названиях переменных одиночные l, I, O  !
-num_1 = 34
-num_2 = 43
-if num_1 > num_2:
+number_1 = 34
+number_2 = 43
+
+if number_1 > number_2:
     print()
-num_3 = 9
-if num_3 > 0:
+
+number_3 = 9
+if number_3 > 0:
     print()
 
 # lowercase (слово в нижнем регистре)
@@ -137,8 +134,9 @@ if num_3 > 0:
 
 # автоматическое переименование в PyCharm и подсказки - вам не нужно набирать длинные названия переменных
 
-ss = ['cat', 'wolf', 'ostrich']
-if 'lion' in ss:
+favorite_pets = ['cat', 'wolf', 'ostrich']
+
+if 'lion' in favorite_pets:
     print('Wow!')
 
 # В каждой уважающей себя компании есть style guide (стайл-гайд) - руководство по стилю написания кода.
