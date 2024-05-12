@@ -1,15 +1,14 @@
 import os
 import time
 
-directory = '/Users/kurdyukov/PycharmProjects'
-for dirpath, dirnames, filenames in os.walk(directory):
-    print('*' * 27)
-    print(dirpath, dirnames, filenames)
-    print(os.path.dirname(dirpath))
-    for file in filenames:
-        full_name_path = os.path.join(dirpath, file)
-        secs =  os.path.getmtime(full_name_path)
-        file_time = time.gmtime(secs)
-        if file_time[0] == 2024:
-            print(full_name_path, secs)
-print(os.path.getsize(dirpath))
+directory = '/Users/kurdyukov/PycharmProjects/Practica_Urban' # Замените на путь к вашему каталогу
+
+for root, dirs, files in os.walk(directory):
+  for file in files:
+    filepath = os.path.join(root, file)
+    filetime = os.path.getmtime(filepath)
+    formatted_time = time.strftime("%d.%m.%Y %H:%M", time.localtime(filetime))
+    filesize = os.path.getsize(filepath)
+    parent_dir = os.path.dirname(filepath)
+    print(f'Обнаружен файл: {file}, Путь: {filepath}, Размер: {filesize} байт, '
+          f'Время изменения: {formatted_time}, Родительская директория: {parent_dir}')
